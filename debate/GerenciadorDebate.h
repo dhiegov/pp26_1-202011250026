@@ -8,6 +8,8 @@
 #include "Logger.h"
 #include "Mediador.h"
 
+// pergunta, resposta, réplica e tréplica
+#define N_FALAS 4
 #define MAX_CANDIDATOS 10
 
 typedef enum {
@@ -26,11 +28,15 @@ private:
     Cronometro* cronometro;
     Logger* logger;
     fase_t faseAtual;
+    int tempos[N_FALAS];
 public:
+    GerenciadorDebate();
+    ~GerenciadorDebate();
     int sortearInquiridor(void);
     void definirInquirido(int id);
     void iniciarFase(int tempo);
     void registrarAcao(std::string acao);
+    void proximaFase(void) override;
 };
 
 #endif

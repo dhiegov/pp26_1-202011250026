@@ -4,9 +4,6 @@
 #include "GerenciadorDebate.h"
 #include "Candidato.h"
 
-// pergunta, resposta, réplica e tréplica
-#define N_FALAS 4
-
 class Fachada
 {
 private:
@@ -44,5 +41,7 @@ public:
     /* @brief Finaliza o debate oficialmente, causa geração do relatório. */
     void finalizarDebate(void);
 };
+
+Fachada* Fachada::instance = nullptr;
 
 #endif
