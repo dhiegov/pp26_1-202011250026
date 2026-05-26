@@ -4,16 +4,17 @@
 #include <iostream>
 
 #include "Microfone.h"
+#include "Colaborador.h"
 
-class Candidato
+class Candidato : public Colaborador
 {
 private:
-    int id;
+    int id; // idealmente o número de voto do Candidato
     std::string nome;
     bool jaPerguntou;
     Microfone* microfone;
-
-
+public:
+    void marcarComoInquiridor(void);
 };
 
 #endif // CANDIDATO_H
