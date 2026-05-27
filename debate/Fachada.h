@@ -4,6 +4,8 @@
 #include "GerenciadorDebate.h"
 #include "Candidato.h"
 
+#include <vector>
+
 class Fachada
 {
 private:
@@ -14,7 +16,7 @@ public:
     static Fachada* getInstance(); // singleton
 
     /* @brief Configura os participantes e tempos de fala de todas interações. */
-    void configurarDebate(const Candidato cands[], std::size_t n_cands, int tempos[N_FALAS]);
+    void configurarDebate(std::vector<Candidato*> cands, int tempos[N_FALAS]);
 
     /* @brief Retorna o id do Candidato sorteado para a próxima interação. */
     int sortearInquiridor(void);
@@ -41,7 +43,5 @@ public:
     /* @brief Finaliza o debate oficialmente, causa geração do relatório. */
     void finalizarDebate(void);
 };
-
-Fachada* Fachada::instance = nullptr;
 
 #endif

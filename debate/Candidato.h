@@ -14,7 +14,16 @@ private:
     bool jaPerguntou;
     Microfone* microfone;
 public:
+    Candidato(void) = delete;
+    Candidato(int id, std::string nome);
+
+    void ligarMicrofone(void);
+    void desligarMicrofone(void);
     void marcarComoInquiridor(void);
+
+    int getId(void) const;
+    std::string getNome(void) const;
+    bool getJaPerguntou(void) const;
 };
 
 #endif // CANDIDATO_H

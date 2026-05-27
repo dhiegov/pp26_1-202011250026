@@ -9,6 +9,8 @@ private:
     int id;
     bool ligado;
 public:
+    Microfone(void) = delete;
+    Microfone(int id);
     void ligar(void);
     void desligar(void);
 };
